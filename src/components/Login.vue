@@ -27,10 +27,6 @@ export default {
 
       const provider = new fireauth.GoogleAuthProvider();
 
-      provider.setCustomParameters({
-        hd: 'liip.ch',
-      });
-
       auth.signInWithPopup(provider).catch(error => {
         this.loading = false;
         this.$notify({
