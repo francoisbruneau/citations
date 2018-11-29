@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="master">
     <header class="topbar" v-if="hasUser">
-      <h1 class="app-title app-title--shrinked"><router-link to="/">Quotes</router-link></h1>
+      <h1 class="app-title app-title--shrinked"><router-link to="/">{{ instanceName }}</router-link></h1>
 
       <ul class="list-inline list-inline--small list-inline--right">
         <li class="hidden-xs-down">{{ name }}</li>
@@ -18,7 +18,7 @@
       <transition name="fade" mode="out-in" v-if="initialized">
         <router-view v-if="hasUser" />
         <div v-else>
-          <h1 class="app-title">Quotes</h1>
+          <h1 class="app-title">{{ instanceName }}</h1>
           <Login />
         </div>
       </transition>
@@ -45,6 +45,7 @@ export default {
   data() {
     return {
       initialized: false,
+      instanceName: process.env.VUE_APP_INSTANCE_NAME || "Quotes"
     };
   },
 
