@@ -45,7 +45,7 @@ export default {
   data() {
     return {
       initialized: false,
-      instanceName: process.env.VUE_APP_INSTANCE_NAME || "Quotes"
+      instanceName: process.env.VUE_APP_INSTANCE_NAME || 'Quotes'
     };
   },
 
